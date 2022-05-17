@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <quadmath.h>
-#include <math.h>
 
 #include "queue.h"
 #include "uthash.h"
@@ -95,7 +94,7 @@ int main() {
     if (x <= lb ) {
       p = 0;
     } else {
-      p = ceill(log2q(x/lb));
+      p = ceilq(log2q(x/lb));
     }
     
     i = 0;
