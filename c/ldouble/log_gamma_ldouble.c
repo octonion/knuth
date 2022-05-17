@@ -53,16 +53,15 @@ void add_triplet(striplet **dict, unsigned long int id, unsigned long int n, uns
   
 }
 
-unsigned long int p,q;
-unsigned long int i,m,nn;
+unsigned int i,p,q;
+unsigned long int m,n;
 
-unsigned long int bound = 1000;
+unsigned long int bound = 1000000000;
 long double lb,x;
 
 int main() {
 
   lb = logl(bound);
-  //printf("lb = %Lf\n",lb);
   
   striplet *s;
   s = (striplet*)malloc(sizeof *s);
@@ -84,15 +83,11 @@ int main() {
     e = TAILQ_FIRST(&head);
     m = e->value;
 
-    //printf("m = %ld\n",m);
-
     TAILQ_REMOVE(&head, e, nodes);
     free(e);
     e = NULL;
 
     x = lgammal(m+1.0L);
-
-    //printf("x = %Lf\n",x);
 
     if (x <= lb ) {
       p = 0;
@@ -100,8 +95,6 @@ int main() {
       p = ceill(log2l(x/lb));
     }
 
-    //printf("p = %ld\n",p);
-    
     i = 0;
 
     q = MAX(p,0);
@@ -109,26 +102,24 @@ int main() {
     i += q;
 
     if (q==0) {
-      nn = roundl(expl(x/powl(2,q)));
+      n = roundl(expl(x/powl(2,q)));
     } else {
-      nn = floorl(expl(x/powl(2,q)));
+      n = floorl(expl(x/powl(2,q)));
     }
 
-    //printf("nn = %ld\n",nn);
-    
-    while (nn>3) {
+    while (n>3) {
       
-      HASH_FIND_ULINT(paths, &nn, s);
+      HASH_FIND_ULINT(paths, &n, s);
       if (s == NULL) {
         e = malloc(sizeof(struct node));
-        e->value = nn;
+        e->value = n;
         TAILQ_INSERT_TAIL(&head, e, nodes);
         e = NULL;
 
-        add_triplet(&paths, nn, m, i);
+        add_triplet(&paths, n, m, i);
       }
 
-      nn = isqrt(nn);
+      n = isqrt(n);
       i += 1;
     }
   }
