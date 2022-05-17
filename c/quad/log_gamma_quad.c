@@ -55,11 +55,11 @@ void add_triplet(striplet **dict, unsigned long int id, unsigned long int n, uns
   
 }
 
-unsigned long int p,q;
-unsigned long int i,m,nn;
+unsigned int i,p,q;
+unsigned long int m,n;
 
 unsigned long int bound = 1000000000;
-__float128 lb,x,y;
+__float128 lb,x;
 
 int main() {
 
@@ -104,24 +104,24 @@ int main() {
     i += q;
 
     if (q==0) {
-      nn = roundq(expq(x/powq(2,q)));
+      n = roundq(expq(x/powq(2,q)));
     } else {
-      nn = floorq(expq(x/powq(2,q)));
+      n = floorq(expq(x/powq(2,q)));
     }
       
-    while (nn>3) {
+    while (n>3) {
       
-      HASH_FIND_ULINT(paths, &nn, s);
+      HASH_FIND_ULINT(paths, &n, s);
       if (s == NULL) {
         e = malloc(sizeof(struct node));
-        e->value = nn;
+        e->value = n;
         TAILQ_INSERT_TAIL(&head, e, nodes);
         e = NULL;
 
-        add_triplet(&paths, nn, m, i);
+        add_triplet(&paths, n, m, i);
       }
 
-      nn = isqrt(nn);
+      n = isqrt(n);
       i += 1;
     }
   }
