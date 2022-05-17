@@ -6,7 +6,7 @@
 
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 
-# From Rosetta Code
+// From Rosetta Code
 
 unsigned long int isqrt(unsigned long int x) {
   unsigned long int q = 1, r = 0;
