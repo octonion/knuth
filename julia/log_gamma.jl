@@ -1,9 +1,9 @@
 using DataStructures
 using SpecialFunctions
 
-setprecision(256)
+setprecision(128)
 
-bound = 1000000000000000
+bound = 1000000000
 
 lb = log(bound)
 
