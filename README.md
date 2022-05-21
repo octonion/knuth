@@ -1,10 +1,10 @@
-## Knuth's Conjecture
+# Knuth's Conjecture
 
 Using only the operations of $x!$, $\sqrt{x}$ and $\lfloor{x}\rfloor$, can you construct any positive integer starting with a 3?
 
 For example, $5 = \left\lfloor{\sqrt{\sqrt{(3!)!}}}\right\rfloor$.
 
-# Compiling and running
+## Compiling and running
 
 ```
 sage check.sage quad_15.txt
