@@ -1,5 +1,10 @@
+## Knuth's Conjecture
 
-Using only the operations of ! (factorial), sqrt() and floor(), can you construct any positive integer starting with a 3?
+Using only the operations of $!$ (factorial), $\sqrt{}$ and $\floor{}$, can you construct any positive integer starting with a 3?
+
+For example, $5 = \sqrt{\sqrt{(3!)!}}$.
+
+# Compiling and running
 
 ```
 sage check.sage quad_15.txt
