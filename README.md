@@ -1,8 +1,8 @@
 ## Knuth's Conjecture
 
-Using only the operations of $!$ (factorial), $\sqrt{}$ and $\floor{}$, can you construct any positive integer starting with a 3?
+Using only the operations of $!$ (factorial), $\sqrt{}$ and $\lfloor \rfloor$, can you construct any positive integer starting with a 3?
 
-For example, $5 = \sqrt{\sqrt{(3!)!}}$.
+For example, $5 = \lfloor{\sqrt{\sqrt{(3!)!}}}\rfloor$.
 
 # Compiling and running
 
